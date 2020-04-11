@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programa AME</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fd92d147e9.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+        <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
+                src="{% static 'logosemfundo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{%url 'url_index'%}">Inicio <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{%url 'url_form'%}">Formulário</a>
+                <a class="nav-item nav-link" href="{%url 'url_exercicios'%}">Atividades físicas</a>
+                <a class="nav-item nav-link" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid px-0 pb-4 m-0 row justify-content-center">
+        <div class="col-12 col-md-5 p-5 align-items-center row justify-content-center">
+            <img style="width: 100%;" src="{% static 'Logo.png' %}">
+        </div>
+        <div class="col-12 mt-3 col-md-5">
+            <h2>O que é o Programa AME?</h2><br>
+            <p>
+                Trata-se de uma intervenção com ações voltadas para a promoção da prática de atividades físicas, orientações sobre educação alimentar e nutricional e estratégias para a redução do comportamento sedentário de adolescentes. 
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+                tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
+                erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique
+                posuere.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+                tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
+                erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique
+                posuere.
+            </p>
+        </div>
+    </div>
+    <div class="container-fluid text-light row bg-danger justify-content-center m-0 p-4">
+        <div class=" col-12 text-center p-3 m-0">
+            <h2>Aplicações Disponíveis</h2>
+        </div>
+        <div class="container-fluid justify-content-center pt-4 row pb-4">
+            <div class="container-fluid row justify-content-center col-12 col-md-4 p-3">
+                <div class="card text-dark" style="width: 18rem;">
+                    <img src="{% static 'google-forms.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Formulário</h5>
+                        <p class="card-text">Esse formulário irá realizar a coleta de dados socioeconômicos e sobre saúde
+                             de diversos alunos para fins de pesquisa do programa AME.</p>
+                        <a href="{%url 'url_form'%}" class="btn btn-primary">Responder o formulário</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid row justify-content-center col-12 col-md-4 p-3">
+                <div class="card text-dark" style="width: 18rem;">
+                    <img src="{% static 'google-forms.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Formulário sobre atividades físicas</h5>
+                        <p class="card-text">Esse formulário irá complementar o formulário ao lado, coletando informações
+                             sobre o tempo que o entrevistado consome ao realizar atividades físicas.</p>
+                        <a href="{%url 'url_exercicios'%}" class="btn btn-primary">Responder o formulário</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid row justify-content-center col-12 col-md-4 p-3">
+                <div class="card text-dark" style="width: 18rem;">
+                    <img src="{% static 'cores.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Teste de Stroop</h5>
+                        <p class="card-text">Aplique esse teste para verificar suas capacidades cognitivas.</p>
+                        <a href="{%url 'url_stroop'%}" class="btn btn-primary">Ir para o teste</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</html>

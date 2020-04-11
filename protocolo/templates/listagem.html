@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <title>Listagem</title>
+</head>
+
+<body>
+
+    <h2 class="ml-3 text-center">Listagem dos testes já realizados</h2>
+
+    <table class="table text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Código Stroop ({{stroopSize}})</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in stroops %}
+            <tr>
+                <th>{{usuario.cod}}</th>
+                <th><a href="{% url 'url_deleteS' usuario.cod %}">Deletar</a></th>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <table class="table text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Código Exercícios ({{exercicioSize}})</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in exercicios %}
+            <tr>
+                <th>{{usuario.cod}}</th>
+                <th><a href="{% url 'url_deleteE' usuario.cod %}">Deletar</a></th>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+    integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
+    crossorigin="anonymous"></script>
+
+</html>

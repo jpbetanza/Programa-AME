@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste Stroop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fd92d147e9.js"></script>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+</head>
+
+<body onkeydown="teclado(event)">
+    <div aria-live="polite" aria-atomic="true" style="position: relative; z-index: 1000;">
+        <div id="notificacoes" class="col-md-3" style="position: absolute; top: 0; right: 10px; height: 20%;"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
+                src="{% static 'logosemfundo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{%url 'url_form'%}">Formulário</a>
+                <a class="nav-item nav-link" href="{%url 'url_exercicios'%}">Atividades físicas</a>
+                <a class="nav-item nav-link active" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid collapse text-center col-12 col-md-9 mt-3 mb-0 pr-0">
+        <form method="POST" id="form1" class="container-fluid col-9 col-md-5 ">
+            {%csrf_token%}
+                <input type="text" class="form-control" name="acertos1" id="acertos1" placeholder="acertos1">
+                <input type="text" class="form-control" name="tempo1" id="tempo1" placeholder="tempo1">
+                <input type="text" class="form-control" name="acertos2" id="acertos2" placeholder="acertos2">
+                <input type="text" class="form-control" name="tempo2" id="tempo2" placeholder="tempo2">
+                <input type="text" class="form-control" name="acertos3" id="acertos3" placeholder="acertos3">
+                <input type="text" class="form-control" name="tempo3" id="tempo3" placeholder="tempo3">
+            </div>
+        </form>
+    </div>
+    <div class=" collapse-inicio">
+    <div class=" container-fluid row">
+        <div class="container-fluid text-center col-12 col-md-9 mt-3 mb-4 pr-0">
+            <div class="collapse show collapseinstrucoes rounded-lg bg-warning text-white p-3 mb-4">
+                <h3 class="m-3">Instruções:</h3>
+                <h5>Selecione no canto inferior da tela a cor correspondente à cor do objeto em destaque. <br>*Dica: Você também pode utilizar as teclas 1, 2, 3 e 4 do teclado para escolher a cor.<br><br>Quando estiver pronto, clique em iniciar. </h5><br>
+            </div>
+            <div id="divInicio" class="collapse show collapseinstrucoes">
+                <button id="inicio" class="btn btn-primary p-1 mb-0" onclick="iniciar()" data-toggle="collapse"
+                    data-target=".collapseinstrucoes">Iniciar</button>
+            </div>
+            <div id="divProxima" class="collapse">
+                <div class="rounded-lg bg-warning text-white p-3 mb-4">
+                    <h3 class="m-3">Instruções Da Próxima Etapa:</h3>
+                    <h5>Selecione no canto inferior da tela a <b>*COR DA FONTE*</b> do texto em destaque. <br>*Dica: Você também pode utilizar as teclas 1, 2, 3 e 4 do teclado para escolher a cor.<br><br>Quando estiver pronto, clique em Próxima Etapa. </h5><br>
+                </div>
+                <button class="btn btn-primary p-1 m-0" id="proxima" onclick="proxEtapa()" data-toggle="collapse"
+                    data-target="#divProxima">Próxima Etapa</button><br>
+            </div>
+            <div id="divMostrarR" class="collapse results results1">
+                <button class="btn btn-primary p-1 m-0" id="proxima" onclick="proxEtapa()" data-toggle="collapse"
+                data-target=".results1">Concluir o teste</button><br>            
+            </div>
+            <div id="divMostrarR" class="collapse results1">
+                <button type="submit" form="form1" value="submit" id="enviar" data-toggle="collapse" data-target="multi-collapse" class="btn btn-success p-1 mb-0">Enviar e mostrar os Resultados </button><br>
+            </div>
+
+        </div>
+    </div>
+    <main>
+        <div id="teste" class="container-fluid row results collapse show m-0 p-0">
+            <div class="col-md-12 m-0 p-0">
+                <table class="table container-fluid mb-2" style="border-collapse: separate;text-align: center; ">
+                    <tr>
+                        <td id='td1' class="border border-light"><span id="dot1" class='dot'></span></td>
+                        <td id='td2' class="border border-light"><span id="dot2" class='dot'></span></td>
+                        <td id='td3' class="border border-light"><span id="dot3" class='dot'></span></td>
+                        <td id='td4' class="border border-light"><span id="dot4" class='dot'></span></td>
+                    </tr>
+                    <tr>
+                        <td id='td5' class="border border-light"><span id="dot5" class='dot'></span></td>
+                        <td id='td6' class="border border-light"><span id="dot6" class='dot'></span></td>
+                        <td id='td7' class="border border-light"><span id="dot7" class='dot'></span></td>
+                        <td id='td8' class="border border-light"><span id="dot8" class='dot'></span></td>
+                    </tr>
+                    <tr>
+                        <td id='td9' class="border border-light"><span id="dot9" class='dot'></span></td>
+                        <td id='td10' class="border border-light"><span id="dot10" class='dot'></span></td>
+                        <td id='td11' class="border border-light"><span id="dot11" class='dot'></span></td>
+                        <td id='td12' class="border border-light"><span id="dot12" class='dot'></span></td>
+                    </tr>
+                    <tr>
+                        <td id='td13' class="border border-light"><span id="dot13" class='dot'></span></td>
+                        <td id='td14' class="border border-light"><span id="dot14" class='dot'></span></td>
+                        <td id='td15' class="border border-light"><span id="dot15" class='dot'></span></td>
+                        <td id='td16' class="border border-light"><span id="dot16" class='dot'></span></td>
+                    </tr>
+                    <tr>
+                        <td id='td17' class="border border-light"><span id="dot17" class='dot'></span></td>
+                        <td id='td18' class="border border-light"><span id="dot18" class='dot'></span></td>
+                        <td id='td19' class="border border-light"><span id="dot19" class='dot'></span></td>
+                        <td id='td20' class="border border-light"><span id="dot20" class='dot'></span></td>
+                    </tr>
+                    <tr>
+                        <td id='td21' class="border border-light"><span id="dot21" class='dot'></span></td>
+                        <td id='td22' class="border border-light"><span id="dot22" class='dot'></span></td>
+                        <td id='td23' class="border border-light"><span id="dot23" class='dot'></span></td>
+                        <td id='td24' class="border border-light"><span id="dot24" class='dot'></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class=" container-fluid d-flex text-center mb-5">
+                <div class="col-md-3"> <button class="btn btn-primary m-0 container-fluid" disabled="true" id='0'
+                        onclick="clicar(0)" value="green">[1] - Verde</button>
+                </div>
+                <div class="col-md-3"> <button class="btn btn-primary m-0 container-fluid" disabled="true" id='1'
+                        onclick="clicar(1)" value="blue">[2] - Azul</button>
+                </div>
+                <div class="col-md-3"> <button class="btn btn-primary m-0 container-fluid" disabled="true" id='2'
+                        onclick="clicar(2)" value="yellow">[3] - Amarelo</button>
+                </div>
+                <div class="col-md-3"> <button class="btn btn-primary m-0 container-fluid" disabled="true" id='3'
+                        onclick="clicar(3)" value="red">[4] - Vermelho</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script src="{%static 'script/script.js'%}"></script>
+</body>
+
+</html>

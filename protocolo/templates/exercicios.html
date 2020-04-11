@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividades Fisicas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="mb-5">
+    <div aria-live="polite" aria-atomic="true" style="position: relative; z-index: 1000;">
+        <div id="notificacoes" class="col-md-3" style="position: absolute; top: 0; right: 10px; height: 20%;"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
+                src="{% static 'logosemfundo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{%url 'url_form'%}">Formulário</a>
+                <a class="nav-item nav-link active" href="{%url 'url_exercicios'%}">Atividades físicas</a>
+                <a class="nav-item nav-link" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+            </div>
+        </div>
+    </nav>
+<div class="container-fluid text-center row mt-3 mb-4 pr-0"></div>
+        <div class=" container-fluid collapse show text-center col-10 collapseinstrucoes rounded-lg bg-warning text-white p-3 mb-5">
+            <h3 class="m-3">Instruções:</h3>
+            <h5 class="mb-4">Procure entre as atividades abaixo, aquelas que você pratica e ao seleciona-la, preencha os campos requisitados
+                <br><br>OBS: Caso não pratique nenhuma, selecione a caixa "Não pratico atividades físicas" no fim da página.
+            </h5>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <form method="POST" class="text-center">
+            {%csrf_token%}
+            <div class="row">
+                <div class="accordion" id="accordionExample"></div>
+                {% for field in form%}
+                    <div class="card col-md-12 p-0">
+
+                        <button id="heading{{forloop.counter}}" class=" card-header bg-dark btn w-100 text-center m-0" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+                            <h5 class="m-0 text-white">{{field.nome}}</h5>
+                        </button>
+                        
+                        <div id="collapse{{forloop.counter}}" class="collapse {%if field.dia.errors or field.minutos.errors %} show {% endif %} bg-secondary text-white" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+                        <div class="card-body row">
+                            <div class="text-center col-md-6 ">
+                                <h5>Vezes por semana</h5>
+                                <div class="text-center">
+                                    <h5 class="text-center text-warning">{{field.dia|bootstrap}}</h5>
+                                </div>
+                            </div>
+                            <div class="text-center col-md-6">
+                                <h5>Tempo por dia (em minutos)</h5>
+                                <div class="text-center">
+                                    <h5 class="text-center text-warning">{{field.minutos|bootstrap}}</h5>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for field in ultimo %}
+                <div class="text-center col-md-12 mt-4">
+                    <h5 class="text-center">{{field|bootstrap}}</h5>
+                </div>
+                {%endfor%}
+                
+                </div>
+            </div> 
+            {% if messages %}
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }} text-center"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            {% endif %}
+
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" type="submit">Enviar</button> 
+            </div>
+        </form>
+        
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script src="{%static 'script/script.js'%}"></script>
+</body>
+
+</html>

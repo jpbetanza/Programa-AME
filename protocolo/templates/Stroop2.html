@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste Stroop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fd92d147e9.js"></script>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+</head>
+
+<body onkeydown="teclado(event)">
+    <div aria-live="polite" aria-atomic="true" style="position: relative; z-index: 1000;">
+        <div id="notificacoes" class="col-md-3" style="position: absolute; top: 0; right: 10px; height: 20%;"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
+                src="{% static 'logosemfundo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{%url 'url_form'%}">Formulário</a>
+                <a class="nav-item nav-link" href="{%url 'url_exercicios'%}">Atividades físicas</a>
+                <a class="nav-item nav-link active" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid text-center col-12 col-md-9 mt-3 mb-0 pr-0">
+        
+    <main>
+        <div>
+            <h1 class="text-center mt-5">Estes são os seus resultados</h1>
+            <div id="resultados" class="m-0 mt-3 text-light results row justify-content-center container-fluid">
+                <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+                    <div class="card-header text-center">Etapa 1</div>
+                    <div class="card-body p-5">
+                        <h5 class="card-title text-center">Acertos:</h5>
+                        <h2 class="card-text text-center">{{valores.acertos1}}</h2>
+                        <h5  class="card-title mt-4 text-center">Tempo médio de resposta:</h5>
+                        <h2 class="card-text text-center">{{valores.tempo1}}s</h2>
+                    </div>
+                </div>
+                <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+                    <div class="card-header text-center">Etapa 2</div>
+                    <div class="card-body p-5">
+                        <h5 class="card-title text-center">Acertos:</h5>
+                        <h2 class="card-text text-center">{{valores.acertos2}}</h2>
+                        <h5  class="card-title mt-4 text-center">Tempo médio de resposta:</h5>
+                        <h2 class="card-text text-center">{{valores.tempo2}}s</h2>
+                    </div>
+                </div>
+                <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+                    <div class="card-header text-center">Etapa 3</div>
+                    <div class="card-body p-5">
+                        <h5 class="card-title text-center">Acertos:</h5>
+                        <h2 class="card-text text-center">{{valores.acertos3}}</h2>
+                        <h5  class="card-title mt-4 text-center">Tempo médio de resposta:</h5>
+                        <h2  class="card-text text-center">{{valores.tempo3}}s</h2>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'url_index'%}" class="btn btn-secondary mt-3">Voltar ao início</a>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script src="{%static 'script/script.js'%}"></script>
+</body>
+
+</html>
