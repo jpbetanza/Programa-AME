@@ -1,6 +1,6 @@
 # Programa AME
 
-Esse é um projeto de doutorado de 3 alunos do Departamento de Saúde Coletiva da UFRN, em conjunto com alunos do laboratório TEAM também da UFRN. Trata-se de um site local, que adiquirirá diversas informações sobre hábitos alimentares e físicos de alunos do ensino fundamental nas escolas da cidade.
+Esse é um projeto juntando o Departamento de Saúde Coletiva da UFRN e o laboratório TEAM. Trata-se de um site local, que adiquirirá diversas informações sobre hábitos alimentares e físicos de alunos do ensino fundamental nas escolas da cidade.
 
 ## Começando
 
