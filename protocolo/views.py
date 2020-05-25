@@ -3,27 +3,6 @@ from django.contrib import messages
 from .models import stroop, exercicios_model
 from protocolo.forms import exercicios
 # Create your views here.
-''' Pagina da listagem/gerenciamento '''
-def listagem(request):
-    '''carrega a pagina de listagem'''
-    data = {}
-    data['stroops'] = stroop.objects.all()
-    data['exercicios'] = exercicios_model.objects.all()
-    data['stroopSize'] = len(stroop.objects.all())
-    data['exercicioSize'] = len(exercicios_model.objects.all())
-    return render(request, 'listagem.html', data)
-
-def deleteS(request, pk):
-    '''deleta um usuario do banco'''
-    testStroop = stroop.objects.get(cod=pk)
-    testStroop.delete()
-    return redirect('url_listagem')
-
-def deleteE(request, pk):
-    '''deleta um usuario do banco'''
-    testExercicio = exercicios_model.objects.get(cod=pk)
-    testExercicio.delete()
-    return redirect('url_listagem')
 
 '''Pagina de utilização geral'''
 def Index(request):

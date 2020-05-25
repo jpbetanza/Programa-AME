@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator,MinValueValidator
 class stroop(models.Model):
+
     cod = models.CharField(max_length=5)
     acertos1 = models.IntegerField()
     acertos2 = models.IntegerField()
@@ -10,10 +11,13 @@ class stroop(models.Model):
     tempo3 = models.CharField(max_length=7)
 
     def __str__(self):
-        return self.cod + ', ' + self.acertos1 + ', '+ self.acertos2 + ', '+ self.acertos3 + ', '+ self.tempo1 + ', '+ self.tempo2 + ', '+ self.tempo3
+        return self.cod
 
 class exercicios_model(models.Model):
     cod = models.CharField(max_length=5)
+
+    def __str__(self):
+        return self.cod
 
     Vezes_Semana_FC = models.IntegerField(null=True, blank=True, default=0, validators=[MinValueValidator(0,message="O valor precisa estar entre 0 e 7"), MaxValueValidator(7,message="O valor precisa estar entre 0 e 7")])
     Minutos_Dia_FC = models.IntegerField(null=True, blank=True, default=0, validators=[MinValueValidator(0,message="Por favor, seja realista"), MaxValueValidator(960,message="Por favor, seja realista")])

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&+l^%)*o+-q$2zb$$%sb%chi@s5df3c(iq3kqk1_p!l0dt#wmd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '192.168.1.102',
@@ -91,7 +91,20 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'primeiraEtapa':{
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'primeiraEtapa.sqlite3'),
+    },
+    'segundaEtapa':{
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'segundaEtapa.sqlite3'),
+    },
+    'terceiraEtapa':{
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'terceiraEtapa.sqlite3'),
     }
+    
 }
 
 

@@ -26,7 +26,4 @@ urlpatterns = [
     path('form/', views.Form, name='url_form'),
     path('exercicios/', views.Exercicios0, name='url_exercicios'),
     path('exercicios/<cod>', views.Exercicios, name='url_exercicios'),
-    path('todosostestes/', views.listagem, name='url_listagem'),
-    path('deleteS/<int:pk>', views.deleteS, name='url_deleteS'),
-    path('deleteE/<int:pk>', views.deleteE, name='url_deleteE'),
 ]
