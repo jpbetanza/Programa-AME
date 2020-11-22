@@ -21,17 +21,18 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
         <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
                 src="{% static 'logosemfundo.png' %}"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler mb-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav w-100 text-center">
                 <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio <span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{%url 'url_form'%}">Formulário</a>
                 <a class="nav-item nav-link" href="{%url 'url_exercicios'%}">Atividades físicas</a>
                 <a class="nav-item nav-link active" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+                <a class="ml-lg-auto nav-item btn btn-outline-warning " href="#">"Informações do Aluno"</a>
             </div>
         </div>
     </nav>
@@ -41,7 +42,7 @@
             <div class="collapse-inicio show">
                 <h2 class="titulo">Teste de Stroop</h2><br>
             <input type="text" id='id_cod' name='codigo' class="form-control" placeholder="Digite seu Código" autofocus>
-            <button type="submit" value="submit" id="enviar" class="btn btn-success mt-4 col-sm-8 col-md-5">Confirmar</button>
+            <button type="submit" value="submit" id="enviar" class="btn btn-success mt-4 col-sm-8 col-md-9">Confirmar</button>
             {% if messages %}
             <ul class="messages mt-3">
                 {% for message in messages %}
@@ -50,6 +51,9 @@
             </ul>
             {% endif %}
         </form>
+        <div>
+            <a class="btn btn-info mt-4 col-sm-8 col-md-9" href="{%url 'url_strooptry'%}">Experimente o Teste</a>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

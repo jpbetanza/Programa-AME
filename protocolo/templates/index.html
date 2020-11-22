@@ -13,20 +13,21 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
         <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
                 src="{% static 'logosemfundo.png' %}"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler mb-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="{%url 'url_index'%}">Inicio <span
+            <div class="navbar-nav w-100 text-center">
+                <a class="nav-item nav-link active" href="{%url 'url_index'%}">Inicio<span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{%url 'url_form'%}">Formulário</a>
                 <a class="nav-item nav-link" href="{%url 'url_exercicios'%}">Atividades físicas</a>
                 <a class="nav-item nav-link" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+                <a class="ml-lg-auto nav-item btn btn-outline-warning " href="#">"Informações do Aluno"</a>
             </div>
         </div>
     </nav>
@@ -34,22 +35,10 @@
         <div class="col-12 col-md-5 p-5 align-items-center row justify-content-center">
             <img style="width: 100%;" src="{% static 'Logo.png' %}">
         </div>
-        <div class="col-12 mt-3 col-md-5">
+        <div class="col-12 mt-3 col-md-5 align-self-center">
             <h2>O que é o Programa AME?</h2><br>
             <p>
                 Trata-se de uma intervenção com ações voltadas para a promoção da prática de atividades físicas, orientações sobre educação alimentar e nutricional e estratégias para a redução do comportamento sedentário de adolescentes. 
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
-                erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique
-                posuere.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
-                erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique
-                posuere.
             </p>
         </div>
     </div>

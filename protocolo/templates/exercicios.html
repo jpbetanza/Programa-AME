@@ -15,20 +15,21 @@
     <div aria-live="polite" aria-atomic="true" style="position: relative; z-index: 1000;">
         <div id="notificacoes" class="col-md-3" style="position: absolute; top: 0; right: 10px; height: 20%;"></div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
         <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
                 src="{% static 'logosemfundo.png' %}"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler mb-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio <span
+            <div class="navbar-nav w-100 text-center">
+                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio<span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{%url 'url_form'%}">Formulário</a>
                 <a class="nav-item nav-link active" href="{%url 'url_exercicios'%}">Atividades físicas</a>
                 <a class="nav-item nav-link" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+                <a class="ml-lg-auto nav-item btn btn-outline-warning " href="#">"Informações do Aluno"</a>
             </div>
         </div>
     </nav>

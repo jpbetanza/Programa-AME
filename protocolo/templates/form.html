@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 90%;">
+<html lang="en">
 {% load static %}
 
 <head>
@@ -11,27 +11,26 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body style="height: 98%; margin:0;">
+<body style="height: 100vh;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
                 src="{% static 'logosemfundo.png' %}"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler mb-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio <span
+            <div class="navbar-nav w-100 text-center">
+                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio<span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="{%url 'url_form'%}">Formulário</a>
                 <a class="nav-item nav-link" href="{%url 'url_exercicios'%}">Atividades físicas</a>
                 <a class="nav-item nav-link" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+                <a class="ml-lg-auto nav-item btn btn-outline-warning" href="#">"Informações do Aluno"</a>
             </div>
         </div>
     </nav>
-    <div class="container-fluid row justify-content-center p-0 m-0" style="height: 100%;">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCY8feBKpB83dsXVoQB4sTtBlTj6X5mBVqhgi-uDHzm-Allw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
-    </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCY8feBKpB83dsXVoQB4sTtBlTj6X5mBVqhgi-uDHzm-Allw/viewform?embedded=true" width="100%" height="87%" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

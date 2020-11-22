@@ -47,6 +47,8 @@ def Stroop1(request,cod):
             return redirect('/stroop/')
     return render(request, 'Stroop1.html')
 
+
+
 def Stroop(request):
     if request.method == 'POST':
         #Pegando os valores do form e copiando-os para uma variável 'data'
@@ -70,6 +72,9 @@ def Stroop(request):
 
     return render(request, 'Stroopm.html')
 
+def StroopTry(request):
+    return render(request, 'StroopTry.html')
+    
 def Form(request):
     return render(request, 'form.html')
     

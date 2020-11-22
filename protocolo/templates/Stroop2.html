@@ -18,39 +18,39 @@
     <div aria-live="polite" aria-atomic="true" style="position: relative; z-index: 1000;">
         <div id="notificacoes" class="col-md-3" style="position: absolute; top: 0; right: 10px; height: 20%;"></div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
         <a class="navbar-brand" href="{%url 'url_index'%}"><img style="height: 45px;"
                 src="{% static 'logosemfundo.png' %}"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler mb-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio <span
+            <div class="navbar-nav w-100 text-center">
+                <a class="nav-item nav-link" href="{%url 'url_index'%}">Inicio<span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{%url 'url_form'%}">Formulário</a>
                 <a class="nav-item nav-link" href="{%url 'url_exercicios'%}">Atividades físicas</a>
                 <a class="nav-item nav-link active" href="{%url 'url_stroop'%}">Teste de Stroop</a>
+                <a class="ml-lg-auto nav-item btn btn-outline-warning " href="#">"Informações do Aluno"</a>
             </div>
         </div>
     </nav>
-    <div class="container-fluid text-center col-12 col-md-9 mt-3 mb-0 pr-0">
         
-    <main>
-        <div>
+    <main class=''>
+        <div class=" text-center">
             <h1 class="text-center mt-5">Estes são os seus resultados</h1>
-            <div id="resultados" class="m-0 mt-3 text-light results row justify-content-center container-fluid">
-                <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+            <div id="resultados" class="m-0 mt-3 col-12 text-light results row justify-content-around">
+                <div class="card bg-primary mb-3 col-12 col-md-6 col-lg-4" style="max-width: 18rem;">
                     <div class="card-header text-center">Etapa 1</div>
                     <div class="card-body p-5">
                         <h5 class="card-title text-center">Acertos:</h5>
                         <h2 class="card-text text-center">{{valores.acertos1}}</h2>
-                        <h5  class="card-title mt-4 text-center">Tempo médio de resposta:</h5>
+                        <h5 class="card-title mt-4 text-center">Tempo médio de resposta:</h5>
                         <h2 class="card-text text-center">{{valores.tempo1}}s</h2>
                     </div>
                 </div>
-                <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+                <div class="card bg-primary mb-3  col-12 col-md-6 col-lg-4" style="max-width: 18rem;">
                     <div class="card-header text-center">Etapa 2</div>
                     <div class="card-body p-5">
                         <h5 class="card-title text-center">Acertos:</h5>
@@ -59,7 +59,7 @@
                         <h2 class="card-text text-center">{{valores.tempo2}}s</h2>
                     </div>
                 </div>
-                <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+                <div class="card bg-primary mb-3 col-12 col-md-6 col-lg-4" style="max-width: 18rem;">
                     <div class="card-header text-center">Etapa 3</div>
                     <div class="card-body p-5">
                         <h5 class="card-title text-center">Acertos:</h5>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <a href="{% url 'url_index'%}" class="btn btn-secondary mt-3">Voltar ao início</a>
+            <a href="{% url 'url_index'%}" class="btn btn-secondary mt-3 mb-3">Voltar ao início</a>
         </div>
     </main>
 

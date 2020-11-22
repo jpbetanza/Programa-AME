@@ -236,11 +236,22 @@ function gerarResultados(a, b) {
     document.getElementById('media3').innerHTML = "Tempo Médio de resposta: " + (temp3Media / 1000) + 's'
     document.getElementById('tempo3').innerHTML = "Tempo total da etapa: " + (temp3Total / 1000) + 's'
 */
+    document.getElementById('acertos1').innerHTML = a.primeira
     document.getElementById('acertos1').value = a.primeira
+    
+    document.getElementById('tempo1').innerHTML = temp1Total/1000+'s'
     document.getElementById('tempo1').value = temp1Total/1000
+
+    document.getElementById('acertos2').innerHTML = a.segunda
     document.getElementById('acertos2').value = a.segunda
+
+    document.getElementById('tempo2').innerHTML = temp2Total/1000+'s'
     document.getElementById('tempo2').value = temp2Total/1000
+
+    document.getElementById('acertos3').innerHTML = a.terceira 
     document.getElementById('acertos3').value = a.terceira 
+
+    document.getElementById('tempo3').innerHTML = temp3Total/1000+'s'
     document.getElementById('tempo3').value = temp3Total/1000
 
 }
@@ -249,17 +260,29 @@ function proxEtapa() {
     desabilitarRespostas(false)
     etapa++;
     if (etapa < 4) {
+        console.log("essa é a etapa "+ etapa)
         document.getElementById('td' + numeroQuestao).classList.add("border-dark")
         cronometro = setInterval(timer, 30)
+        
     }
     if (etapa == 2) {
+        console.log("essa é a etapa "+ etapa)
         gerarCores2();
+        
     } else if (etapa == 3) {
+        console.log("essa é a etapa "+ etapa)
         gerarCores3();
+        
     } else {
+        console.log("essa é a etapa "+ etapa)
         desabilitarRespostas(true)
         gerarResultados(pontuacoes, armazemTempo);
+        
     }
+}
+
+function Resultado(){
+
 }
 
 function iniciar() {

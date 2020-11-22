@@ -36,19 +36,8 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid collapse text-center col-12 col-md-9 mt-3 mb-0 pr-0">
-        <form method="POST" id="form1" class="container-fluid col-9 col-md-5 ">
-            {%csrf_token%}
-                <input type="text" class="form-control" name="acertos1" id="acertos1" placeholder="acertos1">
-                <input type="text" class="form-control" name="tempo1" id="tempo1" placeholder="tempo1">
-                <input type="text" class="form-control" name="acertos2" id="acertos2" placeholder="acertos2">
-                <input type="text" class="form-control" name="tempo2" id="tempo2" placeholder="tempo2">
-                <input type="text" class="form-control" name="acertos3" id="acertos3" placeholder="acertos3">
-                <input type="text" class="form-control" name="tempo3" id="tempo3" placeholder="tempo3">
-            </div>
-        </form>
-    </div>
     <div class=" collapse-inicio">
+    
         <div class="container-fluid text-center col-12 col-md-9 mt-3 mb-4 pr-0">
             <div class="collapse show collapseinstrucoes rounded-lg bg-warning text-white p-3 mb-4">
                 <h3 class="m-3">Instruções:</h3>
@@ -70,14 +59,11 @@
                 <button class="btn btn-primary p-1 m-0" id="proxima" onclick="proxEtapa()" data-toggle="collapse"
                 data-target=".results1">Concluir o teste</button><br>            
             </div>
-            <div id="divMostrarR" class="collapse results1">
-                <button type="submit" form="form1" value="submit" id="enviar" data-toggle="collapse" data-target="multi-collapse" class="btn btn-success p-1 mb-0">Enviar e mostrar os Resultados </button><br>
-            </div>
 
         </div>
     </div>
     <main>
-        <div id="teste" class="container-fluid row results collapse show m-0 p-0">
+        <div id="teste" class="container-fluid row results collapse show m-0 p-0 results1">
             <div class="col-md-12 m-0 p-0">
                 <table class="table container-fluid mb-2" style="border-collapse: separate;text-align: center; ">
                     <tr>
@@ -135,6 +121,39 @@
 
             </div>
         </div>
+    </div>
+    <div class="collapse results1">
+        <h1 class="text-center mt-5">Estes são os seus resultados</h1>
+        <div id="resultados" class="m-0 mt-3 text-light results row justify-content-center container-fluid">
+            <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+                <div class="card-header text-center">Etapa 1</div>
+                <div class="card-body p-5">
+                    <h5 class="card-title text-center">Acertos:</h5>
+                    <h2 id='acertos1' class="card-text text-center">a</h2>
+                    <h5 class="card-title mt-4 text-center">Tempo médio de resposta:</h5>
+                    <h2 id='tempo1' class="card-text text-center">s</h2>
+                </div>
+            </div>
+            <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+                <div class="card-header text-center">Etapa 2</div>
+                <div class="card-body p-5">
+                    <h5 class="card-title text-center">Acertos:</h5>
+                    <h2 id='acertos2' class="card-text text-center">a</h2>
+                    <h5 class="card-title mt-4 text-center">Tempo médio de resposta:</h5>
+                    <h2 id='tempo2' class="card-text text-center">s</h2>
+                </div>
+            </div>
+            <div class="card bg-primary mb-3 m-2 col-12 col-md-4" style="max-width: 18rem;">
+                <div class="card-header text-center">Etapa 3</div>
+                <div class="card-body p-5">
+                    <h5 class="card-title text-center">Acertos:</h5>
+                    <h2 id='acertos3' class="card-text text-center">a</h2>
+                    <h5 class="card-title mt-4 text-center">Tempo médio de resposta:</h5>
+                    <h2 id='tempo3' class="card-text text-center">s</h2>
+                </div>
+            </div>
+        </div>
+        <a href="{% url 'url_stroop'%}" class="btn btn-secondary mt-3 mb-1 ml-1">Voltar à página do Stroop Test</a>
     </div>
     </main>
 

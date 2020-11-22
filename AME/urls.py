@@ -23,6 +23,7 @@ urlpatterns = [
     path('stroop/', views.Stroop, name='url_stroop'),
     path('stroop_teste/<cod>',views.Stroop1, name='url_stroop1'),
     path('stroop_resultados/<cod>', views.Stroop2, name='url_stroop2'),
+    path('stroop_try/', views.StroopTry, name='url_strooptry'),
     path('form/', views.Form, name='url_form'),
     path('exercicios/', views.Exercicios0, name='url_exercicios'),
     path('exercicios/<cod>', views.Exercicios, name='url_exercicios'),
