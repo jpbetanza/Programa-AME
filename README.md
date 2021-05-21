@@ -1,6 +1,6 @@
 # Programa AME
 
-Esse é um projeto juntando o Departamento de Saúde Coletiva da UFRN e o laboratório TEAM. Trata-se de um site local, que adiquirirá diversas informações sobre hábitos alimentares e físicos de alunos do ensino fundamental nas escolas da cidade.
+Esse é um projeto juntando o Departamento de Saúde Coletiva da UFRN e o laboratório TEAM. Trata-se de um site local, que adiquirá diversas informações sobre hábitos alimentares e físicos de alunos do ensino fundamental nas escolas da cidade.
 
 ## Começando
 
