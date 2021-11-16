@@ -31,7 +31,7 @@ Crie e ative um ambiente virtual.
 virtualenv env
 cd env/Scripts
 activate
-cd ../../AME
+cd ../..
 #navegando até a pasta do projeto(pode ser diferente no seu computador, se você tiver colocado as pastas em lugares diferentes)
 ```
 
