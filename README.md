@@ -68,4 +68,4 @@ Por último, há um 'jogo' chamado 'Stroop test', ele brinca com cores e palavra
 
 ## Autores
 
-* **João Pedro Betanza** - *Trabalho conjunto* - [jpbetanza](https://github.com/jpbetanza)
+* **João Pedro Betanza** - [jpbetanza](https://github.com/jpbetanza)
