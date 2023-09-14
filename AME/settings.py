@@ -26,7 +26,8 @@ SECRET_KEY = '&+l^%)*o+-q$2zb$$%sb%chi@s5df3c(iq3kqk1_p!l0dt#wmd'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'programa-ame.vercel.app',
+    '.vercel.app',
+    '.now.sh',
     '192.168.1.102',
     '192.168.43.69',
     '10.51.201.66',
@@ -147,6 +148,5 @@ USE_TZ = True
 
 STATIC_URL ='/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static').replace("\\", "/"),
-]
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
