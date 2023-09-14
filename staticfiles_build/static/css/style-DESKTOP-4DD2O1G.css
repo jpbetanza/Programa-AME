@@ -1,0 +1,22 @@
+span {
+    text-align: center;
+}
+
+td {
+    border:3px;
+    font-family: 'Arial Black', Impact, Haettenschweiler, sans-serif;
+}
+
+button {
+    margin-bottom: 5%;
+    width: 30%;
+    padding: 2%
+}
+
+.dot {
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    background-color: #bbb;
+    display: inline-block;
+}
