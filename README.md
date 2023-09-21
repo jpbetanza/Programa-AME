@@ -6,13 +6,11 @@ Esse é um projeto juntando o Departamento de Saúde Coletiva da UFRN e o labora
 
 Essas instruções farão com que você consiga ter uma cópia funcional desse projeto na sua máquina, para ver como ele funciona.
 
-### Pre-requisitos
+### Pre-requisitos para instalação local
 
 O que você precisará para fazer o servidor local funcionar
 
-```
 [Python](https://www.python.org/) - Linguagem de programação
-```
 
 ### Instalando
 
@@ -25,6 +23,8 @@ Inicie o programa batch "StartApp.bat" e aguarde até que todos os comandos seja
 Acesse o site por qualquer navegador pelo ip/porta
 
 ## O site
+
+[Você pode acessar o site por aqui!](https://programa-ame.vercel.app/)
 
 O site possui uma página inicial, com informações gerais sobre o programa assim como links que acessarão os testes.
 Cada aluno teria um código pré-definido ao inicio dos testes, e eles usariam esses códigos para armazenar suas respostas num banco de dados.
