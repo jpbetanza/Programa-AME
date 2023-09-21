@@ -18,39 +18,11 @@ O que você precisará para fazer o servidor local funcionar
 
 Primeiro, baixe o [Python](https://www.python.org/) do seu site oficial e instale-o em sua máquina (SELECIONE A CAIXA "ADD TO PATH" NO COMEÇO DA INSTALAÇÃO, CASO CONTRÁRIO NÃO FUNCIONARÁ).
 
-Após a instalaçao do python, você terá acesso ao comando "pip" no cmd, utilize ele para instalar a aplicação de criação de maquinas virtuais (é importante para que você organize o funcionamento do programa e não misture com o resto do seu computador)
+Após a instalação do Python, é necessário realizar o download dos arquivos do repositório. Baixando o arquivo .zip, você pode extrair a pasta em um local de seu agrado.
 
-```
-pip install virtualenv
-```
+Inicie o programa batch "StartApp.bat" e aguarde até que todos os comandos sejam executados e apareça um endereço para acesso do site.
 
-Agora, extraia os arquivos desse projeto em alguma pasta de sua preferencia e, nessa pasta raiz inicie o cmd digitando cmd na caixa de local da pasta e pressionando ENTER.
-Crie e ative um ambiente virtual.
-
-```
-virtualenv env
-cd env/Scripts
-activate
-cd ../..
-#navegando até a pasta do projeto(pode ser diferente no seu computador, se você tiver colocado as pastas em lugares diferentes)
-```
-
-Instale as bibliotecas necessárias
-
-```
-pip install django
-pip install django-bootstrap-form
-```
-
-Em seguida inicie o servidor com:
-
-```
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-```
-
-E acesse o site por algum navegador pelo ip/porta
+Acesse o site por qualquer navegador pelo ip/porta
 
 ## O site
 
